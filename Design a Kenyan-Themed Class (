@@ -1,0 +1,32 @@
+class Matatu:
+    def __init__(self, route: str, color: str, fare: int):
+        self.__route = route  # Encapsulated attribute
+        self.color = color
+        self.fare = fare
+
+    def hoot(self):
+        return "Puuuiiip! 🚐"  # Classic matatu hooting sound
+
+    def describe(self):
+        return f"Matatu {self.color} on route {self.__route} charges Ksh {self.fare}"
+
+# Inheritance: NyayoShuttle (Luxury Matatu)
+class NyayoShuttle(Matatu):
+    def __init__(self, route: str, color: str, fare: int, has_wifi: bool):
+        super().__init__(route, color, fare)
+        self.has_wifi = has_wifi
+
+    def hoot(self):  # Method overriding
+        return "Gentle beep. 🎶"  # Luxury shuttle hoot
+
+    def describe(self):
+        return f"Nyayo Shuttle ({self.color}) to {self._Matatu__route} has WiFi: {self.has_wifi}"
+
+# Usage
+m1 = Matatu("Ngong", "Yellow", 50)
+print(m1.describe())  # Output: Matatu Yellow on route Ngong charges Ksh 50
+print(m1.hoot())      # Output: Puuuiiip! 🚐
+
+n1 = NyayoShuttle("Westlands", "White", 200, True)
+print(n1.describe())  # Output: Nyayo Shuttle (White) to Westlands has WiFi: True
+print(n1.hoot())      # Output: Gentle beep. 🎶
