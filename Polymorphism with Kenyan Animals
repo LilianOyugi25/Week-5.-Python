@@ -1,0 +1,25 @@
+class Animal:
+    def move(self):
+        pass
+
+class Lion(Animal):
+    def move(self):
+        return "Simba prowls silently through the grass! 🦁"
+
+class Wildebeest(Animal):
+    def move(self):
+        return "Wildebeest migrates in large herds! 🦬"
+
+class Eagle(Animal):
+    def move(self):
+        return "Tai soars above the Mara! 🦅"
+
+# Usage
+animals = [Lion(), Wildebeest(), Eagle()]
+for animal in animals:
+    print(animal.move())
+
+# Output:
+# Simba prowls silently through the grass! 🦁
+# Wildebeest migrates in large herds! 🦬
+# Tai soars above the Mara! 🦅
